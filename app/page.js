@@ -13,24 +13,26 @@ const page = () => {
    console.log(mainTask)
   }
 const deleteHandler = (i) => {
-
+ let copytask=[...mainTask];
+ copytask.splice(i, 1);
+ setmainTask(copytask);
 }
 
   let renderTask = <h2>No Task Available</h2>
-
+if (mainTask.length > 0) {
   renderTask= mainTask.map((t,i)=>{
- return (
- <div >
-  <li className="oplist" key={i}>
-  <h4>{t.Title}</h4>
-  <h5>{t.desc}</h5>
-  <button onClick={deleteHandler(i)} className="btn2">Delete</button>
-  </li>
-  
- 
- </div>
- );
-  });
+    return (
+    <div >
+     <li className="oplist" key={i}>
+     <h4>{t.Title}</h4>
+     <h5>{t.desc}</h5>
+     <button onClick={()=>{deleteHandler(i)}} className="btn2">Delete</button>
+     </li>
+    </div>
+    );
+     });
+}
+
   return (
   <>
   <h1>todo-list</h1>

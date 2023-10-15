@@ -46,6 +46,7 @@ h1 {
 }
 
 .out {
+  
   background-color: rgb(193, 193, 223);
   width: 100%;
   min-height: 80px;
@@ -54,8 +55,8 @@ h1 {
 }
 
 .oplist {
+  font-family: sans-serif;
   display: flex;
-  font-family: Helvetica;
   margin: 12px 10px;
   font-size: 20px;
   color: black;
